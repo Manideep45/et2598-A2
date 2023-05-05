@@ -9,6 +9,6 @@ app = flask.Flask(__name__)
 
 @app.route('/')
 def index():
-        Time= time.strftime("%H:%M:%S")
-            return Time+" Serving from "+h_name+" ("+IP_addres+")\n"
+    Time= time.strftime("%H:%M:%S")
+    return Time+" Serving from "+h_name+" ("+IP_addres+")\n"
 

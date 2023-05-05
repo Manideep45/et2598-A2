@@ -45,11 +45,11 @@
           executable: pip3
           name: flask
           state: latest
-      - name: install gunicorn
-        pip:
-          executable: pip3
-          name: gunicorn
-          state: latest
+            #      - name: install gunicorn
+            #        pip:
+            # executable: pip3
+            # name: gunicorn
+            # state: latest
       - name: createnew directory
         file:
                 path: "/home/flask-app/"
@@ -62,5 +62,6 @@
       - name: start flask app
         shell: |
           cd /home/flask-app/
-          gunicorn --bind 0.0.0.0:80 app:app& 
-
+          # gunicorn --bind 0.0.0.0:80 app:app& 
+          export FLASK_APP=app.py
+          flask run --host=0.0.0.0 --port=80&
