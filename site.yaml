@@ -2,16 +2,19 @@
 
 - hosts: all
   gather_facts: yes
+  become: yes
+  tasks:
+
+      - name: apt update
+        apt:
+          update_cache: true
+  gather_facts: yes
 
 - name: Configure HAproxy 
   hosts: HAproxy
   become: yes
   tasks:
-      - name : HAproxy update and upgrade
-        apt:
-          upgrade: yes
-          update_cache: yes
-
+  
       - name: Installing HAproxy
         apt:
           name: haproxy
