@@ -1,6 +1,6 @@
-Host BastionET2598
+Host bastionET2598
     User ubuntu
-    Hostname ip_address_BastionET2598
+    Hostname ip_address_bastionET2598
     IdentityFile ~/.ssh/id_rsa
     StrictHostKeyChecking no
     PasswordAuthentication no
