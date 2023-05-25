@@ -1,1 +1,37 @@
-
+Host BastionET2598
+    User ubuntu
+    Hostname ip_address_BastionET2598
+    IdentityFile ~/.ssh/id_rsa
+    StrictHostKeyChecking no
+    PasswordAuthentication no
+   
+Host HAproxy
+    User ubuntu
+    Hostname ip_address_HAproxy
+    IdentityFile ~/.ssh/id_rsa
+    StrictHostKeyChecking no
+    PasswordAuthentication no
+    
+Host devA
+    User ubuntu
+    Hostname ip_address_devA
+    IdentityFile ~/.ssh/id_rsa
+    ProxyJump bastionET2598
+    StrictHostKeyChecking no
+    PasswordAuthentication no
+    
+Host devB
+    User ubuntu
+    Hostname ip_address_devB
+    IdentityFile ~/.ssh/id_rsa
+    ProxyJump bastionET2598
+    StrictHostKeyChecking no
+    PasswordAuthentication no
+    
+Host devC
+    User ubuntu
+    Hostname ip_address_devC
+    IdentityFile ~/.ssh/id_rsa
+    ProxyJump bastionET2598
+    StrictHostKeyChecking no
+    PasswordAuthentication no
